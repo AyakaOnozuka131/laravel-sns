@@ -12,6 +12,8 @@
         <div class="card-body text-center">
           <h2 class="h3 card-title text-center mt-2">ユーザー登録</h2>
 
+          @include('error_card_list')
+
           <div class="card-text">
             <!-- routeは、与えられた名前付きルートのURLを返す -->
             <form action="{{ route('register') }}" method="post">
