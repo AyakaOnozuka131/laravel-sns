@@ -28,6 +28,10 @@
                 <input class="form-control" type="text" id="email" name="email" required value="{{ old('email') }}" >
               </div>
               <div class="md-form">
+                <label for="password">パスワード</label>
+                <input class="form-control" type="password" id="password" name="password" required>
+              </div>
+              <div class="md-form">
                 <label for="password_confirmation">パスワード(確認)</label>
                 <input class="form-control" type="password" id="password_confirmation" name="password_confirmation" required>
               </div>
