@@ -17,4 +17,8 @@ class ArticleController extends Controller
         // 'articles.index'とすることで、resources/views/articlesディレクトリにある、indexという名前のビューファイルが表示
         // 
     }
+    public function create()
+    {
+        return view('articles.create');
+    }
 }

@@ -11,7 +11,8 @@
 |
 */
 Auth::routes();
-Route::get('/', 'ArticleController@index');
+Route::get('/', 'ArticleController@index')->name('articles.index');
+Route::resource('/articles', 'ArticleController')->except(['index']); 
 // Route::getの第一引数には、URLを文字列で渡す
 // 第二引数には、どのコントローラーで何のメソッドを実行するのかを文字列で渡す
 // コントローラー名とメソッド名の間には@を入れる。
