@@ -18,7 +18,7 @@ class CreateArticlesTable extends Migration
             // 後ほどマイグレーションを実行すると、このマイグレーションファイルが使用され、以下のカラムを持ったarticlesテーブルが作成される
             $table->bigIncrements('id');
             $table->string('title');
-            $table->text('text');
+            $table->text('body');
             $table->bigInteger('user_id'); //整数
             $table->foreign('user_id')->references('id')->on('users'); //外部キー制約
             $table->timestamps();
