@@ -21,7 +21,7 @@
 
                 <div class="md-form">
                   <label for="email">メールアドレス</label>
-                  <input class="form-control" type="text" id="email" name="email" required value="{{ old('email') }}">
+                  <input class="form-control" type="text" id="email" name="email" required>
                 </div>
 
                 <div class="md-form">

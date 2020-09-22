@@ -3,7 +3,6 @@
 namespace App\Notifications;
 
 use App\Mail\BareMail;
-
 use Illuminate\Bus\Queueable;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Notifications\Messages\MailMessage;
@@ -13,15 +12,20 @@ class PasswordResetNotification extends Notification
 {
     use Queueable;
 
-    public $token;
-    public $mail;
+    protected $token;
+    protected $mail;
 
     /**
      * Create a new notification instance.
      *
      * @return void
      */
-    public function __construct(string $token,BareMail $mail)
+    /**
+     * PasswordResetNotification constructor.
+     * @param string $token
+     * @param BareMail $mail
+     */
+    public function __construct(string $token, BareMail $mail)
     {
         $this->token = $token;
         $this->mail = $mail;
@@ -44,7 +48,11 @@ class PasswordResetNotification extends Notification
      * @param  mixed  $notifiable
      * @return \Illuminate\Notifications\Messages\MailMessage
      */
-    public function toMail($notifiable)
+    /**
+     * @param $notifiable
+     * @return BareMail
+     */
+    public function toMail($notifiable): BareMail
     {
         return $this->mail
         ->from(config('mail.from.address'), config('mail.from.name'))
