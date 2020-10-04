@@ -1,10 +1,9 @@
-<!-- @extends('app')で、app.blade.phpをベースとして使うことを宣言 -->
-@extends('app')
+@extends('app')<!-- app.blade.phpをベースとして使うことを宣言 -->
 
 @section('title', '記事一覧')
 
-@include('nav')
 @section('content')
+  @include('nav')
   <div class="container">
     @foreach($articles as $article)
       @include('articles.card')
