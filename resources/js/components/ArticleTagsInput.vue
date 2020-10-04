@@ -9,8 +9,8 @@
       v-model="tag"
       :tags="tags"
       placeholder="タグを5個まで入力できます"
-      :autocomplete-items="filteredItems"
-      :add-on-key="[13,32]"
+      :add-on-key="[13, 32]"
+      :autocomplete-items="filterqedItems"
       @tags-changed="newTags => tags = newTags"
     />
   </div>
@@ -45,7 +45,7 @@ export default {
         return i.text.toLowerCase().indexOf(this.tag.toLowerCase()) !== -1;
       });
     },
-    taqsJson(){
+    tagsJson(){
       return JSON.stringify(this.tags)
     }
   },
@@ -54,9 +54,6 @@ export default {
 <style lang="css" scoped>
   .vue-tags-input {
     max-width: inherit;
-  }
-  .vue-tags-input .ti-tag::before {
-    content: "#";
   }
 </style>
 <style lang="css">
@@ -67,5 +64,8 @@ export default {
     margin-right: 4px;
     border-radius: 0px;
     font-size: 13px;
+  }
+    .vue-tags-input .ti-tag::before {
+    content: "#";
   }
 </style>
