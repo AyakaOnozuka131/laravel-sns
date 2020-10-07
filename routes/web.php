@@ -17,6 +17,9 @@ Auth::routes();
 // Route::getの第一引数には、URLを文字列で渡す
 // 第二引数には、どのコントローラーで何のメソッドを実行するのかを文字列で渡す
 // コントローラー名とメソッド名の間には@を入れる。
+Route::prefix('login')->name('login.')->group(function () {
+  Route::get('/{provider}', 'Auth\LoginController@redirectToProvider')->name('{provider}');
+});
 Route::get('/', 'ArticleController@index')->name('articles.index');
 Route::resource('/articles', 'ArticleController')->except(['index', 'show'])->middleware('auth');
 Route::resource('/articles', 'ArticleController')->only(['show']);
